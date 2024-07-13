@@ -1,38 +1,29 @@
-/* Add styles here */
-input[type=number]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-/* Custom Flatpickr styles to match Tailwind/Daisy UI aesthetics */
 .flatpickr-calendar {
   background-color: white;
   border: 1px solid #e5e7eb;
-  /* Tailwind gray-200 */
   border-radius: 0.375rem;
-  /* Tailwind rounded-md */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Tailwind shadow-sm */
 }
 
 .flatpickr-months .flatpickr-month {
   border-radius: 0.375rem 0.375rem 0 0;
-  /* Tailwind rounded-t-md */
 }
 
 .flatpickr-weekdays,
 .flatpickr-days {
   border-radius: 0.375rem;
-  /* Tailwind rounded-md */
 }
 
 .flatpickr-day.today {
   background-color: #3b82f6;
-  /* Tailwind blue-500 */
   color: white;
 }
 
 .flatpickr-day.selected {
   background-color: #2563eb;
-  /* Tailwind blue-600 */
   color: white;
 }
