@@ -40,12 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateReguDetails (
-    selectElement,
-    kaRupamId,
-    anggota1Id,
-    anggota2Id,
-    p2uId
-  ) {
+    selectElement,kaRupamId,anggota1Id,anggota2Id,p2uId) {
     const reguName = selectElement.value
 
     switch (reguName) {
@@ -82,52 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updatePiketStaff () {
-    // Ambil elemen-elemen <select> untuk masing-masing bagian staf
     let piketPerwiraSelect = document.getElementById('piketPerwira')
     let piketDapurSelect = document.getElementById('piketDapur')
     let piketBlokWanitaSelect = document.getElementById('piketBlokWanita')
     let piketStaffKPRSelect = document.getElementById('piketStaffKPR')
     let piketStaffSiangSelect = document.getElementById('piketStaffSiang')
 
-    // Periksa jika elemen-elemen ada sebelum melakukan manipulasi
     if (piketPerwiraSelect) {
-      // Dapatkan nilai opsi yang dipilih
-      let selectedPerwira = Array.from(piketPerwiraSelect.selectedOptions).map(
-        option => option.textContent
-      )
-      // Setel nilai ke dalam input readonly
+      let selectedPerwira = Array.from(piketPerwiraSelect.selectedOptions).map(option => option.textContent)
       document.getElementById('piketPerwira').value = selectedPerwira.join(', ')
     }
 
     if (piketDapurSelect) {
-      let selectedDapur = Array.from(piketDapurSelect.selectedOptions).map(
-        option => option.textContent
-      )
+      let selectedDapur = Array.from(piketDapurSelect.selectedOptions).map(option => option.textContent)
       document.getElementById('piketDapur').value = selectedDapur.join(', ')
     }
 
     if (piketBlokWanitaSelect) {
-      let selectedBlokWanita = Array.from(
-        piketBlokWanitaSelect.selectedOptions
-      ).map(option => option.textContent)
-      document.getElementById('piketBlokWanita').value =
-        selectedBlokWanita.join(', ')
+      let selectedBlokWanita = Array.from(piketBlokWanitaSelect.selectedOptions).map(option => option.textContent)
+      document.getElementById('piketBlokWanita').value = selectedBlokWanita.join(', ')
     }
 
     if (piketStaffKPRSelect) {
-      let selectedStaffKPR = Array.from(
-        piketStaffKPRSelect.selectedOptions
-      ).map(option => option.textContent)
-      document.getElementById('piketStaffKPR').value =
-        selectedStaffKPR.join(', ')
+      let selectedStaffKPR = Array.from(piketStaffKPRSelect.selectedOptions).map(option => option.textContent)
+      document.getElementById('piketStaffKPR').value = selectedStaffKPR.join(', ')
     }
 
     if (piketStaffSiangSelect) {
-      let selectedStaffSiang = Array.from(
-        piketStaffSiangSelect.selectedOptions
-      ).map(option => option.textContent)
-      document.getElementById('piketStaffSiang').value =
-        selectedStaffSiang.join(', ')
+      let selectedStaffSiang = Array.from(piketStaffSiangSelect.selectedOptions).map(option => option.textContent)
+      document.getElementById('piketStaffSiang').value = selectedStaffSiang.join(', ')
     }
   }
 
@@ -140,183 +118,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const narapidanaP = document.getElementById('narapidanaP').value
     const jumlahWBPdalam = document.getElementById('jumlahWBPdalam').value
     const jumlahWBPluar = document.getElementById('jumlahWBPluar').value
-
     const kaRupamSekarang = document.getElementById('kaRupamSekarang').value
     const anggota1Sekarang = document.getElementById('anggota1Sekarang').value
     const anggota2Sekarang = document.getElementById('anggota2Sekarang').value
     const p2uSekarang = document.getElementById('p2uSekarang').value
-
-    const kaRupamSelanjutnya =
-      document.getElementById('kaRupamSelanjutnya').value
-    const anggota1Selanjutnya = document.getElementById(
-      'anggota1Selanjutnya'
-    ).value
-    const anggota2Selanjutnya = document.getElementById(
-      'anggota2Selanjutnya'
-    ).value
+    const kaRupamSelanjutnya =document.getElementById('kaRupamSelanjutnya').value
+    const anggota1Selanjutnya = document.getElementById('anggota1Selanjutnya').value
+    const anggota2Selanjutnya = document.getElementById('anggota2Selanjutnya').value
     const p2uSelanjutnya = document.getElementById('p2uSelanjutnya').value
-
-    const piketPerwira = document
-      .getElementById('piketPerwira')
-      .value.toString()
+    const piketPerwira = document.getElementById('piketPerwira').value.toString()
     const piketDapur = document.getElementById('piketDapur').value.toString()
-    const piketBlokWanita = document
-      .getElementById('piketBlokWanita')
-      .value.toString()
-    const piketStaffKPR = document
-      .getElementById('piketStaffKPR')
-      .value.toString()
-    const piketStaffSiang = document
-      .getElementById('piketStaffSiang')
-      .value.toString()
+    const piketBlokWanita = document.getElementById('piketBlokWanita').value.toString()
+    const piketStaffKPR = document.getElementById('piketStaffKPR').value.toString()
+    const piketStaffSiang = document.getElementById('piketStaffSiang').value.toString()
 
     const tanggalObj = new Date(tanggal)
-    const hariArray = [
-      'MINGGU',
-      'SENIN',
-      'SELASA',
-      'RABU',
-      'KAMIS',
-      'JUMAT',
-      'SABTU'
-    ]
-    const bulanArray = [
-      'JANUARI',
-      'FEBRUARI',
-      'MARET',
-      'APRIL',
-      'MEI',
-      'JUNI',
-      'JULI',
-      'AGUSTUS',
-      'SEPTEMBER',
-      'OKTOBER',
-      'NOVEMBER',
-      'DESEMBER'
-    ]
-
+    const hariArray=["MINGGU","SENIN","SELASA","RABU","KAMIS","JUMAT","SABTU"];
+    const bulanArray=["JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
     const hari = hariArray[tanggalObj.getDay()]
     const tanggalHari = tanggalObj.getDate()
     const bulan = bulanArray[tanggalObj.getMonth()]
     const tahun = tanggalObj.getFullYear()
-
     const shift = document.getElementById('shift').value.toString()
     const formattedDate = `${hari}, ${tanggalHari} ${bulan} ${tahun}`
-
     const hasilLaporan =
-      '*ASTEKPAM RUTAN KELAS IIB WONOSOBO*\n' +
-      `${formattedDate} PUKUL ${jam} WIB\n` +
-      `MOHON IZIN MELAPORKAN ASTEKPAM *RUPAM ${shift.split('-')[0]} KE RUPAM ${
-        shift.split('-')[1]
-      }* BERJALAN AMAN DAN TERTIB, DENGAN RINCIAN SEBAGAI BERIKUT:\n\n` +
-      '*A. PENGHUNI*\n' +
-      '```' +
-      '- Tahanan L            : ' +
-      (tahananL.trim() ? tahananL + ' orang' : '-') +
-      '\n' +
-      '- Tahanan P            : ' +
-      (tahananP.trim() ? tahananP + ' orang' : '-') +
-      '\n' +
-      '- Narapidana L         : ' +
-      (narapidanaL.trim() ? narapidanaL + ' orang' : '-') +
-      '\n' +
-      '- Narapidana P         : ' +
-      (narapidanaP.trim() ? narapidanaP + ' orang' : '-') +
-      '\n' +
-      '- Jumlah               : ' +
-      ((
-        parseInt(tahananL) +
-        parseInt(tahananP) +
-        parseInt(narapidanaL) +
-        parseInt(narapidanaP)
-      )
-        .toString()
-        .trim()
-        ? parseInt(tahananL) +
-          parseInt(tahananP) +
-          parseInt(narapidanaL) +
-          parseInt(narapidanaP) +
-          ' orang'
-        : '-') +
-      '\n' +
-      '- Jumlah WBP di dalam  : ' +
-      (jumlahWBPdalam.trim() ? jumlahWBPdalam + ' orang' : '-') +
-      '\n' +
-      '- Jumlah WBP di luar   : ' +
-      (jumlahWBPluar.trim() ? jumlahWBPluar + ' orang' : '-') +
-      '\n' +
-      '```\n' +
-      '*B. PERSONIL PENGAMANAN*\n\n' +
-      '*RUPAM ' +
-      shift.split('-')[0] +
-      '*\n' +
-      '```' +
-      'Karupam              : ' +
-      kaRupamSekarang +
-      '\n' +
-      'Anggota Rupam        :\n' +
-      '1. ' +
-      (anggota1Sekarang.trim() ? anggota1Sekarang : '-') +
-      '\n' +
-      '2. ' +
-      (anggota2Sekarang.trim() ? anggota2Sekarang : '-') +
-      '\n' +
-      'Petugas P2U          : ' +
-      (p2uSekarang.trim() ? p2uSekarang : '-') +
-      '\n' +
-      'Keterangan           : Hadir Lengkap\n' +
-      '```\n' +
-      '*RUPAM ' +
-      shift.split('-')[1] +
-      '*\n' +
-      '```' +
-      'Karupam              : ' +
-      kaRupamSelanjutnya +
-      '\n' +
-      'Anggota Rupam        :\n' +
-      '1. ' +
-      (anggota1Selanjutnya.trim() ? anggota1Selanjutnya : '-') +
-      '\n' +
-      '2. ' +
-      (anggota2Selanjutnya.trim() ? anggota2Selanjutnya : '-') +
-      '\n' +
-      'Petugas P2U          : ' +
-      (p2uSelanjutnya.trim() ? p2uSelanjutnya : '-') +
-      '\n' +
-      'Keterangan           : Hadir Lengkap\n' +
-      '```\n' +
-      '*PETUGAS PIKET*\n' +
-      '```' +
-      'Perwira Piket        : ' +
-      (piketPerwira.trim() ? piketPerwira : '-') +
-      '\n' +
-      'Dapur                : ' +
-      (piketDapur.trim() ? piketDapur : '-') +
-      '\n' +
-      'Piket Blok Wanita    : ' +
-      (piketBlokWanita.trim() ? piketBlokWanita : '-') +
-      '\n' +
-      'Piket Staff KPR      : ' +
-      (piketStaffKPR.trim() ? piketStaffKPR : '-') +
-      '\n' +
-      'Piket Staff Siang    : ' +
-      (piketStaffSiang.trim() ? piketStaffSiang : '-') +
-      '\n' +
-      '```\n' +
-      '*C. INVENTARIS REGU PENGAMANAN*\n' +
-      '```' +
-      '- Senjata Api P3A      : 1  buah\n' +
-      '- Amunisi P3A karet    : 10 buah\n' +
-      '- Borgol               : 2  buah\n' +
-      '- Metal Detector       : 1  buah\n' +
-      '- HT                   : 6  buah\n' +
-      '- Senter               : 1  buah\n' +
-      '- Lonceng              : 5  buah\n' +
-      '- CCTV                 : 16 buah\n' +
-      '- Sepatu Boat          : 2  buah\n' +
-      '- Payung               : 2  buah\n' +
-      '```\n' +
-      '*DALAM KEADAAN BAIK, SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI. TERIMAKASIH.*'
+
+      "*ASTEKPAM RUTAN KELAS IIB WONOSOBO*\n"
+      + `${formattedDate} PUKUL ${jam} WIB\n`
+      + `MOHON IZIN MELAPORKAN ASTEKPAM *RUPAM ${shift.split('-')[0]} KE RUPAM ${shift.split('-')[1]}* BERJALAN AMAN DAN TERTIB, DENGAN RINCIAN SEBAGAI BERIKUT:\n\n`
+      + "*A. PENGHUNI*\n"
+      + "```"
+      + "- Tahanan L            : " + (tahananL.trim() ? tahananL + " orang" : "-") + "\n"
+      + "- Tahanan P            : " + (tahananP.trim() ? tahananP + " orang" : "-") + "\n"
+      + "- Narapidana L         : " + (narapidanaL.trim() ? narapidanaL + " orang" : "-") + "\n"
+      + "- Narapidana P         : " + (narapidanaP.trim() ? narapidanaP + " orang" : "-") + "\n"
+      + "- Jumlah               : " + ((parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP)).toString().trim() ? (parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP)) + " orang" : "-") + "\n"
+      + "- Jumlah WBP di dalam  : " + (jumlahWBPdalam.trim() ? jumlahWBPdalam + " orang" : "-") + "\n"
+      + "- Jumlah WBP di luar   : " + (jumlahWBPluar.trim() ? jumlahWBPluar + " orang" : "-") + "\n"
+      + "```\n"
+      + "*B. PERSONIL PENGAMANAN*\n\n"
+      + "*RUPAM " + shift.split('-')[0] + "*\n"
+      + "```"
+      + "Karupam              : " + kaRupamSekarang + "\n"
+      + "Anggota Rupam        :\n"
+      + "1. " + (anggota1Sekarang.trim() ? anggota1Sekarang : "-") + "\n"
+      + "2. " + (anggota2Sekarang.trim() ? anggota2Sekarang : "-") + "\n"
+      + "Petugas P2U          : " + (p2uSekarang.trim() ? p2uSekarang : "-") + "\n"
+      + "Keterangan           : Hadir Lengkap\n"
+      + "```\n"
+      + "*RUPAM " + shift.split('-')[1] + "*\n"
+      + "```"
+      + "Karupam              : " + kaRupamSelanjutnya + "\n"
+      + "Anggota Rupam        :\n"
+      + "1. " + (anggota1Selanjutnya.trim() ? anggota1Selanjutnya : "-") + "\n"
+      + "2. " + (anggota2Selanjutnya.trim() ? anggota2Selanjutnya : "-") + "\n"
+      + "Petugas P2U          : " + (p2uSelanjutnya.trim() ? p2uSelanjutnya : "-") + "\n"
+      + "Keterangan           : Hadir Lengkap\n"
+      + "```\n"
+      + "*PETUGAS PIKET*\n"
+      + "```"
+      + "Perwira Piket        : " + (piketPerwira.trim() ? piketPerwira : "-") + "\n"
+      + "Dapur                : " + (piketDapur.trim() ? piketDapur : "-") + "\n"
+      + "Piket Blok Wanita    : " + (piketBlokWanita.trim() ? piketBlokWanita : "-") + "\n"
+      + "Piket Staff KPR      : " + (piketStaffKPR.trim() ? piketStaffKPR : "-") + "\n"
+      + "Piket Staff Siang    : " + (piketStaffSiang.trim() ? piketStaffSiang : "-") + "\n"
+      + "```\n"
+      + "*C. INVENTARIS REGU PENGAMANAN*\n"
+      + "```"
+      + "- Senjata Api P3A      : 1  buah\n"
+      + "- Amunisi P3A karet    : 10 buah\n"
+      + "- Borgol               : 2  buah\n"
+      + "- Metal Detector       : 1  buah\n"
+      + "- HT                   : 6  buah\n"
+      + "- Senter               : 1  buah\n"
+      + "- Lonceng              : 5  buah\n"
+      + "- CCTV                 : 16 buah\n"
+      + "- Sepatu Boat          : 2  buah\n"
+      + "- Payung               : 2  buah\n"
+      + "```\n"
+      + "*DALAM KEADAAN BAIK, SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI. TERIMAKASIH.*"
 
     console.log(hasilLaporan)
 
@@ -342,32 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   shiftSelect.addEventListener('change', updateShift)
-  reguSekarangSelect.addEventListener('change', () =>
-    updateReguDetails(
-      reguSekarangSelect,
-      'kaRupamSekarang',
-      'anggota1Sekarang',
-      'anggota2Sekarang',
-      'p2uSekarang'
-    )
-  )
-  reguSelanjutnyaSelect.addEventListener('change', () =>
-    updateReguDetails(
-      reguSelanjutnyaSelect,
-      'kaRupamSelanjutnya',
-      'anggota1Selanjutnya',
-      'anggota2Selanjutnya',
-      'p2uSelanjutnya'
-    )
-  )
+  reguSekarangSelect.addEventListener('change', () => updateReguDetails(reguSekarangSelect,'kaRupamSekarang','anggota1Sekarang','anggota2Sekarang','p2uSekarang'))
+  reguSelanjutnyaSelect.addEventListener('change', () => updateReguDetails(reguSelanjutnyaSelect,'kaRupamSelanjutnya','anggota1Selanjutnya','anggota2Selanjutnya','p2uSelanjutnya'))
   piketPerwiraSelect.addEventListener('change', updatePiketStaff)
   piketDapurSelect.addEventListener('change', updatePiketStaff)
   piketBlokWanitaSelect.addEventListener('change', updatePiketStaff)
   piketStaffKPRSelect.addEventListener('change', updatePiketStaff)
   piketStaffSiangSelect.addEventListener('change', updatePiketStaff)
-  document
-    .getElementById('generateButton')
-    .addEventListener('click', generateLaporan)
+  document.getElementById('generateButton').addEventListener('click', generateLaporan)
   document.getElementById('copyButton').addEventListener('click', copyLaporan)
 
   const shiftOptions = {
@@ -435,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
   populateSelectOptions(piketStaffSiangSelect, staffSiangOptions)
 })
 
-// Fungsi untuk menambah dan mengurangi nilai input
 function incrementValue (id) {
   var input = document.getElementById(id)
   var value = parseInt(input.value, 10)
@@ -449,38 +310,34 @@ function decrementValue (id) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Nama pembuat
   const creatorName = 'Eliyanto Sarage'
 
-  // Inisialisasi Flatpickr pada elemen input dengan ID "tanggal"
   flatpickr('#tanggal', {
     dateFormat: 'Y-m-d',
     altInput: true,
     altFormat: 'F j, Y',
     locale: {
-      firstDayOfWeek: 1 // Menjadikan Senin sebagai hari pertama dalam minggu
+      firstDayOfWeek: 1
     }
   })
 
-  // Menampilkan nama pembuat di console log dengan pesan menarik menggunakan console.warn
   console.warn(
     `✨ Script ini dibuat oleh: ${creatorName} ✨\nTerima kasih telah menggunakan aplikasi E-ASTEKPAM!\nCek proyek lainnya di GitHub: https://github.com/idugeni`
   )
 })
 
 window.onload = function () {
-  document.getElementById('tahananL').value = 58
+  document.getElementById('tahananL').value = 60
   document.getElementById('tahananP').value = 1
-  document.getElementById('narapidanaL').value = 92
+  document.getElementById('narapidanaL').value = 89
   document.getElementById('narapidanaP').value = 3
-  document.getElementById('jumlahWBPdalam').value = 154
+  document.getElementById('jumlahWBPdalam').value = 153
   document.getElementById('jumlahWBPluar').value = 0
 }
 
-// Show loading spinner for 3 seconds, then fade it out
 setTimeout(function () {
   document.getElementById('loading').classList.add('opacity-0')
   setTimeout(function () {
     document.getElementById('loading').classList.add('hidden')
-  }, 1000) // Allow time for fade-out transition
+  }, 1000)
 }, 3000)
