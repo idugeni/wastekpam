@@ -340,4 +340,4 @@ setTimeout(function () {
   setTimeout(function () {
     document.getElementById('loading').classList.add('hidden')
   }, 1000)
-}, 3000)
+}, 7000)
