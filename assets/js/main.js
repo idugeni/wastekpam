@@ -327,11 +327,11 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.onload = function () {
-  document.getElementById('tahananL').value = 60
-  document.getElementById('tahananP').value = 0
-  document.getElementById('narapidanaL').value = 93
+  document.getElementById('tahananL').value = 64
+  document.getElementById('tahananP').value = 1
+  document.getElementById('narapidanaL').value = 90
   document.getElementById('narapidanaP').value = 4
-  document.getElementById('jumlahWBPdalam').value = 157
+  document.getElementById('jumlahWBPdalam').value = 159
   document.getElementById('jumlahWBPluar').value = 0
 }
 
