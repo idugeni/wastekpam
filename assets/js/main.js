@@ -310,8 +310,9 @@ function decrementValue (id) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const creatorName = 'Eliyanto Sarage'
+  const creatorName = 'Eliyanto Sarage';
 
+  // Inisialisasi flatpickr
   flatpickr('#tanggal', {
     dateFormat: 'Y-m-d',
     altInput: true,
@@ -319,25 +320,31 @@ document.addEventListener('DOMContentLoaded', function () {
     locale: {
       firstDayOfWeek: 1
     }
-  })
+  });
 
+  // Tampilkan pesan terima kasih di konsol
   console.warn(
     `✨ Script ini dibuat oleh: ${creatorName} ✨\nTerima kasih telah menggunakan aplikasi E-ASTEKPAM!\nCek proyek lainnya di GitHub: https://github.com/idugeni`
-  )
-})
+  );
 
-window.onload = function () {
-  document.getElementById('tahananL').value = 64
-  document.getElementById('tahananP').value = 1
-  document.getElementById('narapidanaL').value = 90
-  document.getElementById('narapidanaP').value = 4
-  document.getElementById('jumlahWBPdalam').value = 159
-  document.getElementById('jumlahWBPluar').value = 0
-}
+  // Set nilai default pada elemen input
+  document.getElementById('tahananL').value = 64;
+  document.getElementById('tahananP').value = 1;
+  document.getElementById('narapidanaL').value = 90;
+  document.getElementById('narapidanaP').value = 4;
+  document.getElementById('jumlahWBPdalam').value = 159;
+  document.getElementById('jumlahWBPluar').value = 0;
 
-setTimeout(function () {
-  document.getElementById('loading').classList.add('opacity-0')
+  // Menghilangkan elemen loading setelah 7 detik
   setTimeout(function () {
-    document.getElementById('loading').classList.add('hidden')
-  }, 1000)
-}, 7000)
+    var loadingElement = document.getElementById('loading');
+    if (loadingElement) {
+      loadingElement.classList.add('opacity-0');
+      setTimeout(function () {
+        loadingElement.classList.add('hidden');
+      }, 1000);
+    } else {
+      console.error('Element with ID "loading" not found.');
+    }
+  }, 7000);
+});
