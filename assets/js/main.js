@@ -328,14 +328,14 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   // Set nilai default pada elemen input
-  document.getElementById('tahananL').value = 64;
+  document.getElementById('tahananL').value = 62;
   document.getElementById('tahananP').value = 1;
-  document.getElementById('narapidanaL').value = 90;
-  document.getElementById('narapidanaP').value = 4;
-  document.getElementById('jumlahWBPdalam').value = 159;
+  document.getElementById('narapidanaL').value = 88;
+  document.getElementById('narapidanaP').value = 0;
+  document.getElementById('jumlahWBPdalam').value = 151;
   document.getElementById('jumlahWBPluar').value = 0;
 
-  // Menghilangkan elemen loading setelah 7 detik
+  // Menghilangkan elemen loading setelah 5 detik
   setTimeout(function () {
     var loadingElement = document.getElementById('loading');
     if (loadingElement) {
@@ -346,5 +346,5 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.error('Element with ID "loading" not found.');
     }
-  }, 7000);
+  }, 5000);
 });
