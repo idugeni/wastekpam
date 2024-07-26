@@ -1,6 +1,10 @@
 # WASTEKPAM
 
 <div align="center">
+<img src="https://opengraph.githubassets.com/54b3830568bb8ebca8f25ce0a07175e8/idugeni/wastekpam" alt="wastekpam">
+</div>
+
+<div align="center">
 
 ![License](https://img.shields.io/github/license/idugeni/wastekpam)
 ![Version](https://img.shields.io/github/v/release/idugeni/wastekpam)
