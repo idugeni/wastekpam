@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let jamValue = ''
 
     switch (shiftValue) {
-      case 'PAGI-SIANG':
+      case 'PAGI - SIANG':
         jamValue = '13.00'
         break
-      case 'SIANG-MALAM':
+      case 'SIANG - MALAM':
         jamValue = '19.00'
         break
-      case 'MALAM-PAGI':
+      case 'MALAM - PAGI':
         jamValue = '07.00'
         break
       default:
@@ -144,62 +144,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasilLaporan =
 
       "*ASTEKPAM RUTAN KELAS IIB WONOSOBO*\n"
-      + `${formattedDate} PUKUL ${jam} WIB\n`
-      + `MOHON IZIN MELAPORKAN ASTEKPAM *RUPAM ${shift.split('-')[0]} KE RUPAM ${shift.split('-')[1]}* BERJALAN AMAN DAN TERTIB, DENGAN RINCIAN SEBAGAI BERIKUT:\n\n`
-      + "*A. PENGHUNI*\n"
-      + "```"
-      + "- Tahanan L            : " + (tahananL.trim() ? tahananL + " orang" : "-") + "\n"
-      + "- Tahanan P            : " + (tahananP.trim() ? tahananP + " orang" : "-") + "\n"
-      + "- Narapidana L         : " + (narapidanaL.trim() ? narapidanaL + " orang" : "-") + "\n"
-      + "- Narapidana P         : " + (narapidanaP.trim() ? narapidanaP + " orang" : "-") + "\n"
-      + "- Jumlah               : " + ((parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP)).toString().trim() ? (parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP)) + " orang" : "-") + "\n"
-      + "- Jumlah WBP di dalam  : " + (jumlahWBPdalam.trim() ? jumlahWBPdalam + " orang" : "-") + "\n"
-      + "- Jumlah WBP di luar   : " + (jumlahWBPluar.trim() ? jumlahWBPluar + " orang" : "-") + "\n"
-      + "```\n"
-      + "*B. PERSONIL PENGAMANAN*\n\n"
-      + "*RUPAM " + shift.split('-')[0] + "*\n"
-      + "```"
-      + "Karupam              : " + kaRupamSekarang + "\n"
-      + "Anggota Rupam        :\n"
-      + "1. " + (anggota1Sekarang.trim() ? anggota1Sekarang : "-") + "\n"
-      + "2. " + (anggota2Sekarang.trim() ? anggota2Sekarang : "-") + "\n"
-      + "Petugas P2U          : " + (p2uSekarang.trim() ? p2uSekarang : "-") + "\n"
-      + "Keterangan           : Hadir Lengkap\n"
-      + "```\n"
-      + "*RUPAM " + shift.split('-')[1] + "*\n"
-      + "```"
-      + "Karupam              : " + kaRupamSelanjutnya + "\n"
-      + "Anggota Rupam        :\n"
-      + "1. " + (anggota1Selanjutnya.trim() ? anggota1Selanjutnya : "-") + "\n"
-      + "2. " + (anggota2Selanjutnya.trim() ? anggota2Selanjutnya : "-") + "\n"
-      + "Petugas P2U          : " + (p2uSelanjutnya.trim() ? p2uSelanjutnya : "-") + "\n"
-      + "Keterangan           : Hadir Lengkap\n"
-      + "```\n"
-      + "*PETUGAS PIKET*\n"
-      + "```"
-      + "Perwira Piket        : " + (piketPerwira.trim() ? piketPerwira : "-") + "\n"
-      + "Dapur                : " + (piketDapur.trim() ? piketDapur : "-") + "\n"
-      + "Piket Blok Wanita    : " + (piketBlokWanita.trim() ? piketBlokWanita : "-") + "\n"
-      + "Piket Staff KPR      : " + (piketStaffKPR.trim() ? piketStaffKPR : "-") + "\n"
-      + "Piket Staff Siang    : " + (piketStaffSiang.trim() ? piketStaffSiang : "-") + "\n"
-      + "```\n"
-      + "*C. INVENTARIS REGU PENGAMANAN*\n"
-      + "```"
-      + "- Senjata Api P3A      : 1  buah\n"
-      + "- Amunisi P3A karet    : 10 buah\n"
-      + "- Borgol               : 2  buah\n"
-      + "- Metal Detector       : 1  buah\n"
-      + "- HT                   : 6  buah\n"
-      + "- Senter               : 1  buah\n"
-      + "- Lonceng              : 5  buah\n"
-      + "- CCTV                 : 16 buah\n"
-      + "- Sepatu Boat          : 2  buah\n"
-      + "- Payung               : 2  buah\n"
-      + "```\n"
-      + "*DALAM KEADAAN BAIK, SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI. TERIMAKASIH.*"
+    + (formattedDate ? formattedDate : "Tanggal tidak diketahui") + " PUKUL " + (jam ? jam : "Waktu tidak diketahui") + " WIB\n"
+    + "MOHON IZIN MELAPORKAN ASTEKPAM *RUPAM " + (shift ? shift.split('-')[0] : "Tidak diketahui") + " KE RUPAM " + (shift ? shift.split('-')[1] : "Tidak diketahui") + "* BERJALAN AMAN DAN TERTIB, DENGAN RINCIAN SEBAGAI BERIKUT:\n\n"
+    + "*A. PENGHUNI*\n"
+    + "```\n"
+    + "- Tahanan L            : " + (tahananL && tahananL.trim() ? tahananL + " orang" : "-") + "\n"
+    + "- Tahanan P            : " + (tahananP && tahananP.trim() ? tahananP + " orang" : "-") + "\n"
+    + "- Narapidana L         : " + (narapidanaL && narapidanaL.trim() ? narapidanaL + " orang" : "-") + "\n"
+    + "- Narapidana P         : " + (narapidanaP && narapidanaP.trim() ? narapidanaP + " orang" : "-") + "\n"
+    + "- Jumlah Total         : " + (parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP) ? (parseInt(tahananL) + parseInt(tahananP) + parseInt(narapidanaL) + parseInt(narapidanaP)) + " orang" : "-") + "\n"
+    + "- Jumlah WBP di Dalam  : " + (jumlahWBPdalam && jumlahWBPdalam.trim() ? jumlahWBPdalam + " orang" : "-") + "\n"
+    + "- Jumlah WBP di Luar   : " + (jumlahWBPluar && jumlahWBPluar.trim() ? jumlahWBPluar + " orang" : "-") + "\n"
+    + "```\n"
+    + "*B. PERSONIL PENGAMANAN*\n\n"
+    + "*RUPAM " + (shift ? shift.split('-')[0] : "Tidak diketahui") + "*\n"
+    + "```\n"
+    + "* KARUPAM        : " + (kaRupamSekarang ? kaRupamSekarang : "-") + "\n"
+    + "* Anggota Rupam  :\n"
+    + "   1. " + (anggota1Sekarang && anggota1Sekarang.trim() ? anggota1Sekarang : "-") + "\n"
+    + "   2. " + (anggota2Sekarang && anggota2Sekarang.trim() ? anggota2Sekarang : "-") + "\n"
+    + "* Petugas P2U    : " + (p2uSekarang && p2uSekarang.trim() ? p2uSekarang : "-") + "\n"
+    + "* Keterangan     : Hadir Lengkap\n"
+    + "```\n"
+    + "*RUPAM " + (shift ? shift.split('-')[1] : "Tidak diketahui") + "*\n"
+    + "```\n"
+    + "* KARUPAM        : " + (kaRupamSelanjutnya ? kaRupamSelanjutnya : "-") + "\n"
+    + "* Anggota Rupam  :\n"
+    + "   1. " + (anggota1Selanjutnya && anggota1Selanjutnya.trim() ? anggota1Selanjutnya : "-") + "\n"
+    + "   2. " + (anggota2Selanjutnya && anggota2Selanjutnya.trim() ? anggota2Selanjutnya : "-") + "\n"
+    + "* Petugas P2U    : " + (p2uSelanjutnya && p2uSelanjutnya.trim() ? p2uSelanjutnya : "-") + "\n"
+    + "* Keterangan     : Hadir Lengkap\n"
+    + "```\n"
+    + "*PETUGAS PIKET*\n"
+    + "```\n"
+    + "* Perwira Piket      : " + (piketPerwira && piketPerwira.trim() ? piketPerwira : "-") + "\n"
+    + "* Piket Dapur        : " + (piketDapur && piketDapur.trim() ? piketDapur : "-") + "\n"
+    + "* Piket Blok Wanita  : " + (piketBlokWanita && piketBlokWanita.trim() ? piketBlokWanita : "-") + "\n"
+    + "* Piket Staff KPR    : " + (piketStaffKPR && piketStaffKPR.trim() ? piketStaffKPR : "-") + "\n"
+    + "* Piket Staff Siang  : " + (piketStaffSiang && piketStaffSiang.trim() ? piketStaffSiang : "-") + "\n"
+    + "```\n"
+    + "*C. INVENTARIS REGU PENGAMANAN*\n"
+    + "```\n"
+    + "- Senjata Api P3A    : 1  buah\n"
+    + "- Amunisi P3A karet  : 10 buah\n"
+    + "- Borgol             : 2  buah\n"
+    + "- Metal Detector     : 1  buah\n"
+    + "- HT                 : 6  buah\n"
+    + "- Senter             : 1  buah\n"
+    + "- Lonceng            : 5  buah\n"
+    + "- CCTV               : 16 buah\n"
+    + "- Sepatu Boat        : 2  buah\n"
+    + "- Payung             : 2  buah\n"
+    + "```\n"
+    + "*DALAM KEADAAN BAIK, SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI. TERIMAKASIH.*"
 
-    console.log(hasilLaporan)
-
+    console.log(hasilLaporan);
     document.getElementById('laporan').value = hasilLaporan
     document.getElementById('copyButton').classList.remove('hidden')
   }
@@ -233,9 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('copyButton').addEventListener('click', copyLaporan)
 
   const shiftOptions = {
-    'PAGI-SIANG': 'PAGI-SIANG',
-    'SIANG-MALAM': 'SIANG-MALAM',
-    'MALAM-PAGI': 'MALAM-PAGI'
+    'PAGI - SIANG': 'PAGI - SIANG',
+    'SIANG - MALAM': 'SIANG - MALAM',
+    'MALAM - PAGI': 'MALAM - PAGI'
   }
 
   const reguOptions = {
@@ -265,14 +264,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const staffKPROptions = {
-    'Staff KPR 1': 'Arif Aditiya',
-    'Staff KPR 2': 'Nurul Dewi Ardhiyani',
-    'Staff KPR 3': 'Setyarifqi',
-    'Staff KPR Lengkap': 'Arif Aditiya, Nurul Dewi Ardhiyani, Setyarifqi',
+    'Staff KPR 1': 'Ahmad Labiib',
+    'Staff KPR 2': 'Arif Aditiya',
+    'Staff KPR 3': 'Nurul Dewi Ardhiyani',
+    'Staff KPR 4': 'Setyarifqi',
+    'Staff KPR Lengkap': 'Ahmad Labiib, Arif Aditiya, Nurul Dewi Ardhiyani, Setyarifqi',
+    'Ahmad dan Arif': 'Ahmad Labiib, Arif Aditiya',
+    'Ahmad dan Nurul': 'Ahmad Labiib, Nurul Dewi Ardhiyani',
+    'Ahmad dan Setya': 'Ahmad Labiib, Setyarifqi',
     'Arif dan Nurul': 'Arif Aditiya, Nurul Dewi Ardhiyani',
+    'Arif dan Setya': 'Arif Aditiya, Setyarifqi',
     'Nurul dan Setya': 'Nurul Dewi Ardhiyani, Setyarifqi',
-    'Arif dan Setya': 'Arif Aditiya, Setyarifqi'
-  }
+    'Ahmad, Arif, dan Nurul': 'Ahmad Labiib, Arif Aditiya, Nurul Dewi Ardhiyani',
+    'Ahmad, Arif, dan Setya': 'Ahmad Labiib, Arif Aditiya, Setyarifqi',
+    'Ahmad, Nurul, dan Setya': 'Ahmad Labiib, Nurul Dewi Ardhiyani, Setyarifqi',
+    'Arif, Nurul, dan Setya': 'Arif Aditiya, Nurul Dewi Ardhiyani, Setyarifqi'
+}
 
   const staffSiangOptions = {
     'Staff Siang 1': 'Murdoko',
@@ -284,7 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'Staff Siang 7': 'Muhammad Hafidh Ar Rasyid',
     'Staff Siang 8': 'Puji Wiranto',
     'Staff Siang 9': 'Arif Aditiya',
-    'Staff Siang 10': 'Andhi Irmawan'
+    'Staff Siang 10': 'Andhi Irmawan',
+    'Staff Siang 11': 'Ahmad Labiib'
   }
 
   populateSelectOptions(shiftSelect, shiftOptions)
@@ -322,12 +330,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Tampilkan pesan terima kasih di konsol
   console.warn(
     `✨ Script ini dibuat oleh: ${creatorName} ✨\nTerima kasih telah menggunakan aplikasi E-ASTEKPAM!\nCek proyek lainnya di GitHub: https://github.com/idugeni`
   );
 
-  // Set nilai default pada elemen input
   document.getElementById('tahananL').value = 62;
   document.getElementById('tahananP').value = 1;
   document.getElementById('narapidanaL').value = 88;
@@ -346,5 +352,5 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.error('Element with ID "loading" not found.');
     }
-  }, 5000);
+  }, 7000);
 });
