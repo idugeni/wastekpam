@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     + "- Tahanan P            : " + (tahananP ? tahananP + " orang" : "-") + "\n"
     + "- Narapidana L         : " + (narapidanaL ? narapidanaL + " orang" : "-") + "\n"
     + "- Narapidana P         : " + (narapidanaP ? narapidanaP + " orang" : "-") + "\n"
-    + "- Jumlah Total         : 154 orang\n"
+    + "- Jumlah Total         : 156 orang\n"
     + "- Jumlah WBP di Dalam  : " + (jumlahWBPdalam ? jumlahWBPdalam + " orang" : "-") + "\n"
     + "- Jumlah WBP di Luar   : " + (jumlahWBPluar ? jumlahWBPluar + " orang" : "-") + "\n"
     + "```\n"
@@ -334,11 +334,11 @@ document.addEventListener('DOMContentLoaded', function () {
     `✨ Script ini dibuat oleh: ${creatorName} ✨\nTerima kasih telah menggunakan aplikasi E-ASTEKPAM!\nCek proyek lainnya di GitHub: https://github.com/idugeni`
   );
 
-  document.getElementById('tahananL').value = 62;
+  document.getElementById('tahananL').value = 55;
   document.getElementById('tahananP').value = 2;
-  document.getElementById('narapidanaL').value = 90;
+  document.getElementById('narapidanaL').value = 99;
   document.getElementById('narapidanaP').value = 0;
-  document.getElementById('jumlahWBPdalam').value = 154;
+  document.getElementById('jumlahWBPdalam').value = 156;
   document.getElementById('jumlahWBPluar').value = 0;
 
   setTimeout(function () {
